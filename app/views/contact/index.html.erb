@@ -1,0 +1,22 @@
+<% content_for :page_javascript do %>
+  <%= javascript_include_tag 'contact' %>
+<% end %>
+
+<% content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag 'contact', :media => 'screen' %>
+<% end %>
+
+<% content_for :extra_title do %>
+  <%= t(:contact_us) %> : 
+<% end %>
+
+<section class="main contact">
+  <%= render :partial => "header" %>
+  <div class="content clear">
+    <% if (I18n.locale.to_s.downcase == "ar") %>
+      <%= render :partial => "form_ar" %>
+    <% else %>
+      <%= render :partial => "form_en" %>
+    <% end %>
+  </div><!-- End .Content -->
+</section><!-- End .Home -->

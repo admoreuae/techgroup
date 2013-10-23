@@ -1,0 +1,13 @@
+<section class="news">
+  <%= render :partial => "header" %>
+  <div class="content">
+    <section class="postings">
+      <div>
+        <section>
+          <%= render :partial => 'post', :locals => { :post => @post, :categories => @categories, :full => true } %>
+        </section>
+        <%= render "sidebar" %>
+      </div>
+    </section>
+  </div>
+</section>

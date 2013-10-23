@@ -1,0 +1,11 @@
+<nav class="subnav">
+  <ul class="breadcrumb">
+    <li><a href="<%= root_path %>" title="<%= t(:home) %>"><%= t(:home) %></a></li>
+	  <li><a href="<%= companies_path %>" title="<%= t(:our_companies) %>"><%= t(:our_companies) %></a></li>
+	  <li><%= object.title %></li>
+  </ul>
+</nav>
+
+<div class="banner">
+  <%= image_tag(object.banner.banner, :alt=> object.title) %>
+</div>

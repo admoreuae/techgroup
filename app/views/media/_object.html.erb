@@ -1,0 +1,72 @@
+<article>
+  <h4><%= object.title %></h4>
+  
+  <div class="media-object-wrapper clear">
+    <div class="date"><%= object.created_at.strftime("%B %d, %Y") %></div>
+    
+    <div class="body">
+      
+      <!-- IMAGE -->
+      <% if not object.image.url.to_s.empty? %>
+        <div class="image">
+          <%= image_tag object.image.url %>
+          <p class="caption"><%= object.image_caption %></p>
+        </div>
+      <% end %>
+
+
+      <!-- CONTENT -->
+      <% if object.description %>
+      <section>
+        <%= object.description.html_safe %>
+      </section>
+      <% end %>
+
+
+      <!-- READ MORE LINKS -->
+      <% if object.read_more_title1 %>
+        <p>
+          <%= t(:read_more) %>&nbsp;&nbsp;
+          <%= link_to object.read_more_title1, object.read_more_link1, :target => "_blank" %>
+
+          <% if object.read_more_title2 %>
+            | <%= link_to object.read_more_title2, object.read_more_link2, :target => "_blank" %>
+          <% end %>
+
+          <% if object.read_more_title3 %>
+            | <%= link_to object.read_more_title3, object.read_more_link3, :target => "_blank" %>
+          <% end %>
+        </p>
+      <% end %>
+
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="meta clear">
+    <div class="tags">
+      <span><%= t(:posted_under) %>:</span>
+      <ul>
+        <li>
+          <a href="<%= category_media_path(object.media_category, :locale=>I18n.locale) %>" alt="<%= t(:view_more_posts) %>">
+            <%= object.media_category.title %>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="other-media">
+      <ul>
+        <% if not object.pdf.url.to_s.empty? %>
+          <li><%= link_to "pdf",  object.pdf.url %></li>
+        <% end %>
+
+        <!--
+        <li><a href="#">print</a></li>  
+        <li><a href="#">email</a></li>
+        -->
+      </ul>
+    </div>
+  </div>
+</article>

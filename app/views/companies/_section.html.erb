@@ -1,0 +1,11 @@
+<a href="<%= url_for company_section_path(section,:locale=>I18n.locale) %>" class="clear">
+  <h3><%= section.title %></h3>
+  <div class="text">
+    <% if section.description.strip.start_with? '<p>' %>
+      <%= section.description.html_safe %>
+    <% else %>
+      <p><%= section.description.html_safe %></p>
+    <% end %>
+    <span class="orange"><%= t(:more) %></span>
+  </div>
+</a>

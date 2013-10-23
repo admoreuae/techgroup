@@ -1,0 +1,90 @@
+// Here's where we define some default constants
+@import "partials/base";
+
+// Then we'll import the compass extension
+@import "h5bp";
+
+// Now, you can simply include everything
+// (except print and helpers) by uncommeting this line
+//@include html5-boilerplate;
+
+// Or, you can pick and choose only the sections
+// you want by using the this include
+
+@include h5bp-display;
+@include h5bp-selection;
+@include h5bp-base;
+@include h5bp-links;
+@include h5bp-typography;
+@include h5bp-lists;
+@include h5bp-embeds;
+@include h5bp-figures;
+@include h5bp-forms;
+@include h5bp-tables;
+
+
+// Or, you can import the "overrides" partial if
+// you want more control over individual mixins
+//@import "partials/overrides";
+
+// Finally, put your own styles in these partials
+// and add more as needed (i.e. forms, tables, nav)
+@import "partials/fonts";
+@import "partials/page";
+
+// Helpers classes should come second-to-last
+@include h5bp-helpers;
+
+// Media should come last
+@include h5bp-media;
+
+
+footer {
+  .facebook a {
+    background: image-url("icons/facebook.png");
+    display:block;
+    width:24px;
+    height: 0; overflow: hidden; padding-top: 24px;
+  }
+
+  .twitter a {
+    background: image-url("icons/twitter.png");
+    display:block;
+    width:24px;
+    height: 0; overflow: hidden; padding-top: 24px;
+  }
+
+  .linkedin a {
+    background: image-url("icons/linkedin.png");
+    display:block;
+    width:24px;
+    height: 0; overflow: hidden; padding-top: 24px;
+  }
+  
+  .youtube a {
+    background: image-url("icons/youtube.png");
+    display:block;
+    width:24px;
+    height: 0; overflow: hidden; padding-top: 24px;
+  }
+  
+  .IN-widget{
+    margin-top: 3px;
+  }
+  
+}
+
+// MOBILE
+@media screen and (max-width:759px) {
+  footer[role="footer"] {
+    ul li {
+      &.facebook, &.twitter, &.youtube {
+        float:left;
+      }
+    }
+
+    p.copyright {
+      margin-top:15px;
+    }
+  }
+}

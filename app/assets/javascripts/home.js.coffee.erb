@@ -1,0 +1,24 @@
+#= require libs/jquery.flexslider
+
+$ ->
+  $('#hero').flexslider
+    animation:    "slide"
+    easing:       "easeInOutCirc"
+    useCSS:       false
+    controlNav:   false
+    directionNav: false
+       
+  $('#companies').flexslider
+    animation:      "slide"
+    easing:         "easeInOutCirc"
+    useCSS:         false
+    slideshow:      false
+    controlNav:     false
+    itemWidth:      220
+    itemMargin:     10
+    animationLoop:  false
+    directionNav:   true
+    prevText: '<%= image_tag("companies-arrow_left.svg", :alt=>"Previous") %>'
+    nextText: '<%= image_tag("companies-arrow_right.svg", :alt=>"Next") %>'
+    #controlsContainer: "#companies .flex-direction-nav"
+    #manualControls: ".flex-direction-nav li"    

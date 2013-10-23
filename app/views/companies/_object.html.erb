@@ -1,0 +1,8 @@
+<a href="<%= url_for company_path(object,:locale=>I18n.locale) %>" class="clear">
+  <div class="logo">
+    <%= image_tag(object.logo) %>
+  </div>
+  <div class="description">
+    <p><%= object.description %></p>
+  </div>
+</a>

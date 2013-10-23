@@ -1,0 +1,12 @@
+<li class="item">
+  <% if not item.image.to_s.empty? %>
+  <div class="image">
+    <%= image_tag(item.image.thumbnail) %>
+  </div>
+  <% end %>
+  
+  <div class="text" <% if item.image.to_s.empty? %>style='margin-left:0; width:100%;'<% end %>>
+    <h5><%= item.title %></h5>
+    <%= item.description.html_safe %>
+  </div>
+</li>

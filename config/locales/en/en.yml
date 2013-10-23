@@ -1,0 +1,40 @@
+en:
+  #shared
+  tech_group: "Tech Group"
+  
+  #header
+  corporation: "Corporation"
+  our_companies: "Our Companies"
+  portfolio: "Portfolio"
+  media: "Media"
+  contact:  "Contact"
+  switch_language: العربية
+  
+  overview: "Overview"
+
+  #footer
+  tech_group_corporate_video: "Tech Group Corporate Video"
+  tech_group_business_brochure: "Tech Group Business Brochure"
+  contact_tech_group_today: "Contact Tech Group Today"
+  
+  careers: "careers"
+  terms_and_conditions: "terms and conditions"
+  privacy_policy: "privacy policy"
+  feedback: "feedback"
+  
+  tech_group_all_rights_reserved: "Tech Group PJSC. All Rights Reserved."
+  
+  #breadcrumb
+  home: "home"
+  
+  #terms and conditions
+  terms_and_conditions: "Terms and Conditions"
+  terms_and_conditions_text: "Terms and Conditions Text"
+  
+  thank_you:        "Thank you!"
+  your_message:     "Your Message"
+  choose_country:   "Choose Country"
+  country:          "Country"
+  your_email:       "Your Email"
+  your_name:        "Your Name"
+  submit_form:      "Submit Form"

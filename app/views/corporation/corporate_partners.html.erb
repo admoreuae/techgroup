@@ -1,0 +1,14 @@
+<%- content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag 'corporation', :media => 'screen' %>
+<% end %>
+
+<section class="main corporation corporate-partners">
+  <%= render :partial => "header", :locals=>{:header_image=>"corporation-corporate_partners.jpg"} %>
+  <div class="content clear"> 
+    <%= render "sidebar", :active_page=>"corporate_partners"  %>
+    <section class="overview">
+      <h2><%= t(:corporate_partners) %></h2>
+      <%= settings_value("Corporate Partners").html_safe %>
+    </section>
+  </div>
+</section>

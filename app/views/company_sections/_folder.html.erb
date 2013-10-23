@@ -1,0 +1,14 @@
+<div class='item'>
+  <div class="image">
+    <%= image_tag(folder.image.thumbnail) %>
+  </div>
+  <div class="text">
+    <h5><%= folder.title %></h5>
+    <% if folder.description %><p><%= folder.description.html_safe %></p><% end %>
+    <% if folder.company_section_items.count > 0 %>
+      <a href="<%= url_for company_section_folder_path(folder,:locale=>I18n.locale) %>">
+        <span class="orange">more</span>
+      </a>
+    <% end %>
+  </div>
+</div>

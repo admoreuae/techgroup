@@ -1,0 +1,17 @@
+<%- content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag 'portfolio', :media => 'screen' %>
+<% end %>
+
+<section class="portfolio-projects main">
+  <%= render :partial => "project_header" %>
+  <div class="content clear">
+    <%= render "sidebar", :active_page=>"projects"  %>
+    <section class="projects-wrapper">
+      <h2><%= t(:tech_group_projects_header) %></h2>
+      <h3><%= t(:tech_group_projects_full_text) %></h3>
+      <div id="projects">
+        <%= render :partial => 'project', :collection => @objects %>
+      </div>
+    </section>
+  </div>
+</section>

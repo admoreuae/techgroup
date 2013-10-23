@@ -1,0 +1,38 @@
+<%- content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag 'companies', :media => 'screen' %>
+<% end %>
+
+<% content_for :extra_title do %>
+  <%= @object.title %> : 
+<% end %>
+
+<section class="main company">
+  <%= render :partial => "show_header", :locals => {:object => @object} %>
+
+  <div class="content clear">
+    <%= render :partial => "shared/company_sidebar", :locals => { :company => @object, :sections => @sections} %>
+
+    <section class="overview">
+      <div class="description-wrapper">
+        <div class="logo"><%= image_tag(@object.logo, :height=>38) %></div>
+        <h2><%= t(:overview) %></h2>
+        <p class="description"><%= @object.description %></p>
+      </div>
+
+      <section class="company-section-wrapper clear">
+        <% if (I18n.locale.to_s.downcase == "ar") %>
+          <%= render :partial => "section", :collection => @sections.reverse %>
+        <% else %>
+          <%= render :partial => "section", :collection => @sections %>
+        <% end %>
+      </section>
+      <% if @object.company_cert_logos.count > 0 %>
+        <ul class="cert-logos">
+          <% @object.company_cert_logos.each do |o| %>
+          <li><%= image_tag o.image.cert_logo %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </section>
+  </div>
+</section>

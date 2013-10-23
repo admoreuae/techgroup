@@ -1,0 +1,123 @@
+<aside class="sidebar">
+  <div class="sections">
+    <ul>
+      <li class="<% if @current_section.empty? %>active<% end %>"> 
+        <a href="<%= company_path(company, :locale=>I18n.locale) %>" alt="<%= t(:overview) %>">
+          <%= t(:overview) %>
+        </a>
+      </li>
+      
+      <% if (I18n.locale.to_s.downcase == "ar") %>
+        <% sections = sections.reverse %>
+      <% end %>
+
+      <% sections.each do |section| %>
+        <li class="<% if @current_section == section.slug %>active<% end %>">
+          <a href="<%= company_section_path(section, :locale=>I18n.locale) %>" alt="<%= t(:overview) %>">
+            <%= section.title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+  <div class="contact-info">
+    <ul>
+      <li>
+        <% if company.contact_title %>
+		      <span class="contact-title"><%= company.contact_title %></span>
+        <% end %>
+      </li>
+      <li>
+        <span><%= t(:address) %></span>
+		    <span><%= company.address %></span>
+      </li>
+      <% if not (company.map_address.nil? or company.map_address.empty?) %>
+        <li>
+          <span>
+            <a href="<%= company.map_address %>&output=embed"
+              class="fancybox-map fancybox.iframe"
+              style="text-transform:uppercase;"><%= t(:location_map) %></a>
+          </span>
+        </li>
+      <% end %>
+      <li>
+        <span><%= t(:telephone) %></span>
+		    <span><%= company.phone %></span>
+      </li>
+      <li>
+        <span><%= t(:fax) %></span>
+		    <span><%= company.fax %></span>
+      </li>
+      <li>
+        <span><%= t(:email) %></span>
+		    <span><a href="mailto:<%= company.email %>"><%= company.email %></a></span>
+      </li>
+
+      <% if !company.brochure.path.nil? %>
+      <li>
+        <span><%= t(:brochure) %></span>
+		    <span><a href="<%= company.brochure %>"><%= t(:download) %></a></span>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+  <% if company.contact_title2.try(:any?) %>
+    <div class="contact-info">
+      <ul>
+        <li>
+  		    <span class="contact-title"><%= company.contact_title2 %></span>
+        </li>
+        <li>
+          <span><%= t(:address) %></span>
+  		    <span><%= company.address2 %></span>
+        </li>
+        <li>
+          <span><%= t(:telephone) %></span>
+  		    <span><%= company.phone2 %></span>
+        </li>
+        <li>
+          <span><%= t(:fax) %></span>
+  		    <span><%= company.fax2 %></span>
+        </li>
+        <li>
+          <span><%= t(:email) %></span>
+  		    <span><a href="mailto:<%= company.email2 %>"><%= company.email2 %></a></span>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <% if company.contact_title3.try(:any?) %>
+    <div class="contact-info">
+      <ul>
+        <li>
+  		    <span class="contact-title"><%= company.contact_title3 %></span>
+        </li>
+        <li>
+          <span><%= t(:address) %></span>
+  		    <span><%= company.address3 %></span>
+        </li>
+        <li>
+          <span><%= t(:telephone) %></span>
+  		    <span><%= company.phone3 %></span>
+        </li>
+        <li>
+          <span><%= t(:fax) %></span>
+  		    <span><%= company.fax3 %></span>
+        </li>
+        <li>
+          <span><%= t(:email) %></span>
+  		    <span><a href="mailto:<%= company.email3 %>"><%= company.email3 %></a></span>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</aside>

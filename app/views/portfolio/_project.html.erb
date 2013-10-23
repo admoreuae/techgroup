@@ -1,0 +1,26 @@
+<section class="project">
+  <div class="image">
+    <img src="<%= project.image.thumbnail %>" alt="<%= project.title %>">
+  </div>
+  <h3><%= project.title.try(:titlecase) %></h3>
+  <ul>
+    <li>
+      <b><%= t(:client) %>: </b><%= project.client.try(:titlecase) %>
+    </li>
+    <li>
+      <b><%= t(:consultant) %>: </b><%= project.consultant.try(:titlecase) %>
+    </li>
+    <li>
+      <b><%= t(:main_contractor) %>: </b><%= project.main_contractor %>
+    </li>
+    <li>
+      <b><%= t(:sub_contractors) %>: </b><%= project.sub_contractors %>
+    </li>
+    <li>
+      <b><%= t(:project_worth) %>: </b><%= project.project_worth %>
+    </li>
+    <li>
+      <b><%= t(:location) %>: </b><%= project.location %>
+    </li>
+  </ul>
+</section>

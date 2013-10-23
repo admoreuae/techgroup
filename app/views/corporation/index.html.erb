@@ -1,0 +1,41 @@
+<% content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag 'corporation', :media => 'screen' %>
+<% end %>
+
+<% content_for :extra_title do %>
+  <%= t(:corporation) %> : 
+<% end %>
+
+<section class="corporation main">
+  <%= render :partial => "header", :locals=>{:header_image=>"corporation-overview.jpg"} %>
+  <div class="content clear">
+    <%= render "sidebar", :active_page=>"overview"  %>
+    <section class="overview">
+      <h2><%= t(:overview) %></h2>
+      <%= settings_value("Corporation Overview").html_safe %>
+
+      <section class="missions clear">
+        <section class="mission">
+          <h3><%= t(:our_vision_header) %> </h3>
+          <p><%= t(:our_vision_text) %> </p>
+        </section>
+        <section class="mission">
+          <h3><%= t(:our_mission_header) %> </h3>
+          <p><%= t(:our_mission_text) %> </p>
+        </section>
+      </section>
+    </section>
+    <% if (I18n.locale.to_s.downcase == "ar") %>
+      <section class="spacer clear"></section>
+    <% end %>
+    <section id="history-wrapper">
+      <h3><%= t(:our_history) %></h3>
+      <section class="history-objects clear">
+        <%= render :partial => 'history_object', 
+          :collection => @objects, 
+          :locals => {:history_object_count=>@objects.count-1} 
+        %>
+      </section>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<header role="header">
+  <div class="container">
+    <nav role="navigation" class="clear">
+      <a href="<%= root_path(:locale=>I18n.locale) %>" title="<%= t(:home) %>" class="logo">
+        <%= image_tag("techgroup-logo.svg", :alt=>"Tech Group") %>
+      </a>
+      <ul>
+        <li class="corporation">
+          <a href="<%= corporation_index_path(:locale=>I18n.locale) %>" title="<%= t(:corporation) %>" class="<%= @location == "corporation" ? "current" : ""%>">
+             <%= t(:corporation) %>
+          </a>
+        </li>
+        <li class="companies">
+          <a href="<%= companies_path(:locale=>I18n.locale) %>" title="<%= t(:our_companies) %>" class="<%= @location == "our_companies" ? "current" : ""%>">
+            <%= t(:our_companies) %>
+          </a>
+        </li>
+        <li class="portfolio">
+          <a href="<%= portfolio_index_path(:locale=>I18n.locale) %>" title="<%= t(:portfolio) %>" class="<%= @location == "portfolio" ? "current" : ""%>">
+            <%= t(:portfolio) %>
+          </a>
+        </li>
+        <li class="media">
+          <a href="<%= media_path(:locale=>I18n.locale) %>" title="<%= t(:media) %>" class="<%= @location == "media" ? "current" : ""%>">
+            <%= t(:media) %>
+          </a>
+        </li>
+        <li class="contact">
+          <a href="<%= contact_path(:locale=>I18n.locale) %>" title="<%= t(:contact) %>" class="<%= @location == "contact" ? "current" : ""%>">
+            <%= t(:contact) %>
+          </a>
+        </li>
+        <li class="switcher">
+          <%- new_locale = (I18n.locale.to_s.downcase == "en" ? "ar" : "en") %>
+          <a href="<%= change_locale_path(:locale=>new_locale) %>" title="<%= t(:switch_language) %>" class="right">
+            <%= t(:switch_language) %>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<%= render "layouts/mobile_nav" %>
